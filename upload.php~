@@ -1,0 +1,10 @@
+<?php
+$target_dir = "Screenshots/";
+$prefix = $_GET['prefix'];
+$num = $_GET['num'];
+$temp = explode(".",$_FILES["user_file"]["name"][0]);
+$newname = $prefix.'-'.$num.'.'.$temp[1];
+$target_file = $target_dir .$newname;
+move_uploaded_file($_FILES["user_file"]["tmp_name"][0], $target_file);
+
+?>
