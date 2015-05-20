@@ -1,0 +1,39 @@
+<html>
+<head>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body>
+<div ng-app = "app" ng-controller = "formcontroller">
+<form>
+<table>
+<tr><td>Name:</td><td><input type="text" ng-model="user.fname" name="fname"></td></tr>
+<tr><td>Password:</td><td><input type="password" ng-model="user.fpassword"  name="fpassword"></td></tr>
+<tr><td>Email:</td><td><input type="email" ng-model="user.femail"  name="femail"></td></tr>
+<tr><td><input type="button" ng-click="reset()" value="Reset"></td></tr>
+<tr><td><input type="submit" ng-click="update(user)" value="update"></td></tr>
+</table>
+</form>
+<p>form = {{user}}</p>
+<p>registered value = {{value}}</p>
+</div>
+<script>
+var app=angular.module("app",[]);
+app.controller('formcontroller', function($scope,$http){
+		$scope.value = {};
+		 
+
+		$scope.update = function(user){
+			$scope.value = angular.copy(user);
+			$http.post("http://localhost/Bharathi/server.php", {data:$scope.user});
+		};
+
+		$scope.reset = function(){
+			$scope.user =  angular.copy($scope.value);
+		};
+
+		$scope.reset();
+});
+</script>
+</script>
+</body>
+</html>
