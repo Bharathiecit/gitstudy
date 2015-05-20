@@ -6,7 +6,7 @@
 <div ng-app = "app" ng-controller = "formcontroller">
 <form>
 <table>
-<tr><td>User Name:</td><td><input type="text" ng-model="user.fname" name="fname"></td></tr>
+<tr><td>Name:</td><td><input type="text" ng-model="user.fname" name="fname"></td></tr>
 <tr><td>Password:</td><td><input type="password" ng-model="user.fpassword"  name="fpassword"></td></tr>
 <tr><td>Email:</td><td><input type="email" ng-model="user.femail"  name="femail"></td></tr>
 <tr><td><input type="button" ng-click="reset()" value="Reset"></td></tr>
