@@ -1,0 +1,55 @@
+﻿<div>
+
+    <div id="register" style="width:100%;" ng-controller="projectController" ng-init="initializeController()" ng-cloak>
+
+        <h1 class="page-header">Projects <small>Create Project</small></h1>
+        
+         <form novalidate name="form">
+
+        <div class="col-xs-12">
+            
+            <div class="row"> 
+                <div class="col-xs-4 col-xs-push-2">
+                    <div class="input-group">
+                        <label for="">Project Name</label>
+                        <input ng-model="model.project_name" name="project_name" id="project_name" type="text"  class="form-control" placeholder="Enter Project Name" required/>
+                        <p class="text-danger" ng-show="form.project_name.$invalid && !form.project_name.$pristine" class="help-block">Project name is required.</p>
+                    </div>
+                </div>
+            </div>
+             <div class="row"> 
+                <div class="col-xs-4 col-xs-push-2">
+                    <div class="input-group">
+                        <label for="">Client Name</label>
+                        <input ng-model="model.client_name" id="client_name" name="client_name" type="text"  class="form-control" placeholder="Enter Client Name" required/>
+                        <p class="text-danger" ng-show="form.client_name.$invalid && !form.client_name.$pristine" class="help-block">Client name is required.</p>
+                    </div>
+                </div>
+            </div>
+             
+            
+            
+            <div class="row">
+                <div class="col-xs-4 col-xs-push-2">
+                <br>
+                    <button class="btn btn-success  btn-large signin-btn" ng-disabled="form.$invalid" ng-click="save(model)">Save</button>
+                </div>
+            
+            </div>
+
+             <div class="row">
+                <div class="col-xs-4 col-xs-push-4 login-err">
+                    <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">
+                    <div ng-bind-html="MessageBox"></div>
+                    </alert>
+                </div>
+                
+            </div>
+ 
+        
+    </div>
+    </form>
+</div>
+
+
+   
