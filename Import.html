@@ -1,0 +1,23 @@
+﻿
+<div ng-controller="importController" ng-init="initializeController()">
+
+    <h3> Import</h3>
+
+    <div>
+    <p ng-show="loadingtxt">Loading Please Wait..........</p>
+    <form enctype="multipart/form-data">
+    	<select ng-model="import.nm">
+    		<option value="0" >Select Type</option>
+    		<option>User</option>
+    	</select>
+    	<br>
+        <input type="file" name="exl" ng-model="import.exl" id="exl" />
+		<button ng-click="importExl(import)">Import</button>
+    </form>
+
+    <br>
+    <span ng-show="success" class="alert alert-success">Imported Successfully</span>
+    <span ng-show="erro" class="alert alert-danger">Something Went Wrong!</span>
+    </div>
+
+</div>
